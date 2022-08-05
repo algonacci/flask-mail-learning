@@ -22,7 +22,6 @@ def subscribe():
         email = request.form['email']
         print(email)
         msg = Message('Hello', sender='no-reply@travens.id', recipients=[email])
-        msg.body = "Hey Paul, sending you this email from my Flask app, lmk if it works"
         msg.html = '<b>Hey Paul</b>, sending you this email from my <a href="https://google.com">Flask app</a>, lmk if it works'
         with app.open_resource("document.pdf") as fp:  
             msg.attach("document.pdf", "application/pdf", fp.read())  
